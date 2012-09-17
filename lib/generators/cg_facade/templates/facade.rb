@@ -1,5 +1,5 @@
 <% module_namespacing do -%>
-class <%= class_name %>Controller < ApplicationController
+class <%= class_name %>Facade < CgFacade::Base
 <% actions.each do |action| -%>
   def <%= action %>
   end
