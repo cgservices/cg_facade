@@ -1,2 +1,4 @@
-class Base
+module CgFacade
+  class Base
+  end
 end
