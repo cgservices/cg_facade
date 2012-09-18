@@ -1,7 +1,7 @@
 <% module_namespacing do -%>
-class <%= class_name %>Facade < CgFacade::Base
+class <%= class_name %>Facade < CgFacade::<%= options.facade_class.camelize %>
 <% actions.each do |action| -%>
-  def <%= action %>
+  def <%= action.underscore %>
   end
 <%= "\n" unless action == actions.last -%>
 <% end -%>
