@@ -20,7 +20,7 @@ module CgFacade
       end
 
       def find_facades_by_name(facade)
-        self.loader_facades.select{|f| f.to_s.split("::").last == facade}
+        self.loader_facades.select{|f| f.to_s.include?(facade)}
       end
     end
 

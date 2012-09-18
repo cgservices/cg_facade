@@ -7,7 +7,7 @@ puts "Registering Facades..."
 Gem.loaded_specs["cg_facade"].dependent_gems.each do |g|
   Dir.glob("#{g.first.full_gem_path}/app/facades/**/*.rb") do |rb_file|
     require rb_file
-    class_name = g.first.name.camelize + "::" +File.basename(rb_file, ".rb").camelize
+    class_name = File.dirname(rb_file.sub("#{g.first.full_gem_path}/app/facades/","")).camelize + "::" + File.basename(rb_file, ".rb").camelize
     class_name.constantize.new
   end
 end
